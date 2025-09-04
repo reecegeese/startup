@@ -97,3 +97,8 @@ Handling the toggling of the checkboxes was particularly interesting.
   ))}
 </div>
 ```
+git clone to clone
+cd to open folder
+git pull to get new updates
+git commit to make changes
+git puch to send changes to github
