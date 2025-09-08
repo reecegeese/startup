@@ -2,7 +2,7 @@
 
 [My Notes](notes.md)
 
-My application will create and store a list of user inputs and track which user submitted what to the list. This can be used for family shopping lists, workplace playlists, or vacation bucket lists. It will also have the ability for the 'owner' of the list to name the list and strike through completed tasks on the list
+My application will create and store a list of user inputs and track which user submitted what to the list. This can be used for family shopping lists, workplace playlists, or vacation bucket lists. It will also have the ability for in people to strike through completed tasks on the list. This list will keep track of who has crossed off what.
 
 
 > [!NOTE]
@@ -18,15 +18,15 @@ My application will create and store a list of user inputs and track which user 
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
 - [ ] Description of key features
 - [ ] Description of how you will use each technology
 - [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+I have made a super quick and easy way for a group of people to contribute to a list everyone can see. All you have to do is login, create a list, add contributors, and start adding to the list. Anyone can add to this list, everyone can see who added what to the list, and everyone can see what has been crossed off and who crossed it off.
 
 ### Design
 
@@ -43,20 +43,24 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Creating a list
+- Adding contributors to the list
+- Anyone can see the lsit
+- Anyone can add to the list
+- Anyone can cross objects off the list
+- Show who added what to the list
+- Show who crossed what off the list
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Print out format of the application and list
+- **CSS** - Making the layout of the list visually pleasing
+- **React** - Prompt users to login then ask if they want to create or join a list and bring them to that list
+- **Service** - Store the list name, additions, users, who added what, who crossed off what, and what is crossed off. Also provide a random usless fact via the Random Useless Facts API
+- **DB/Login** - Provide the total number of list items and how many have not been crossed off
+- **WebSocket** - Update additions to the list and what has been crossed off in real time for all users
 
 ## 🚀 AWS deliverable
 
