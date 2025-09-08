@@ -33,14 +33,7 @@ I have made a super quick and easy way for a group of people to contribute to a 
 ![Main screen](listmaker1.png)
 ![List screen](listmaker2.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
+These scetches are rough drafts of what I imagine my application looking like. On the left is the main screen where the user is prompted to name their list and create it. On the right is what I envision the live feed of the list looking like to the users. It provides all the objects in the list, who added them, and clearly shows what has been crossed off
 
 ### Key features
 
