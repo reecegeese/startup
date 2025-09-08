@@ -1,8 +1,8 @@
-# Your startup name here
+# Community List Maker
 
 [My Notes](notes.md)
 
-A brief description of the application here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+My application will create and store a list of user inputs and track which user submitted what to the list. This can be used for family shopping lists, workplace playlists, or vacation bucket lists. It will also have the ability for the 'owner' of the list to name the list and strike through completed tasks on the list
 
 
 > [!NOTE]
