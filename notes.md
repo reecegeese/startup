@@ -97,7 +97,7 @@ Handling the toggling of the checkboxes was particularly interesting.
   ))}
 </div>
 ```
-Use the Ubuntu terminal
+Use the git Bash terminal inside VS Code
 
 git clone to clone
 
