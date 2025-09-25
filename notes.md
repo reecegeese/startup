@@ -110,3 +110,5 @@ git pull to get new updates
 git commit to make changes
 
 git puch to send changes to github
+
+Sudo password is 20 05 with a capital G
