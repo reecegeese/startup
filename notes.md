@@ -107,8 +107,14 @@ code . to run code in the VS Code live server
 
 git pull to get new updates
 
+git add to add changes
+
 git commit to make changes
 
-git puch to send changes to github
+git push to send changes to github
+
+Must save with ctrl s then git add commit push every time
 
 Sudo password is 20 05 with a capital G
+
+./deployFiles.sh -k ~/Downloads/reece.love2.pem -h reecelove260.click -s simon
