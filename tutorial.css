@@ -5,29 +5,33 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  min-width: 375px;
   background-color: #9ecffa; 
-  height: 60vh;
 }
 
 header {
-  height: 20vh;
+  position: fixed;
+  width: 100%;
   display: flex;
+  align-items: center;
 }
 
 footer {
-  height: 20vh;
+  position: fixed;
+  width: 100%;
   display: flex;
+  align-items: center;
 }
 
 #top_nav {
     border-bottom: solid #40a3ff medium;
+    background-color: #9ecffa;
     white-space: nowrap;
     overflow: hidden;
 }
 
 #bottom_nav {
     border-top: solid #40a3ff medium;
+    background-color: #9ecffa;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -35,21 +39,6 @@ footer {
 #bottom_div {
     display: flex;
     justify-content: center;
-}
-
-.custom-bordered-table {
-    width: 40%;
-    border-collapse: collapse;
-}
-
-.custom-bordered-table th, .custom-bordered-table td {
-    border: 2px solid #333;
-    padding: 10px;
-    text-align: center;
-}
-
-.custom-bordered-table th {
-    background-color: #2097fe;
 }
 
 main {
