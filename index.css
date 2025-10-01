@@ -19,10 +19,14 @@ footer {
 
 #top_nav {
     border-bottom: solid #40a3ff medium;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #bottom_nav {
     border-top: solid #40a3ff medium;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #bottom_div {
