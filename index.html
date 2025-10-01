@@ -12,61 +12,66 @@
 
   <body>
     <header class="sticky-top">
-      <nav class="navbar navbar-expand-lg bg-light">
+      <nav class="navbar fixed-top navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand">
-            <h1>Bootstrap</h1>
+            <h1>List Maker</h1>
           </a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="yourLists.html">My Lists</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="groups.html">My Groups</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="tutorial.html">Tutorial</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="flex.html">Flex Test</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="bootstrap.html">Bootstrap Testing</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="yourLists.html">My Lists</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="groups.html">My Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tutorial.html">Tutorial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="flex.html">Flex Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bootstrap.html">Bootstrap Testing</a>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
 
-    <main>
-      <h1>Start making lists</h1>
-      <form method="get" action="play.html">
-        <div>
-          <span>@</span>
-          <input type="text" placeholder="your@email.com" />
-        </div>
-        <div>
-          <span>🔒</span>
-          <input type="password" placeholder="password" />
-        </div>
-        <button type="submit">Login</button>
-        <button type="submit">Create Account</button>
-      </form>
+    <main class="container-fluid text-center">
+      <div>
+        <h1>Start making lists</h1>
+        <form method="get" action="play.html">
+          <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <input class="form-control" type="text" placeholder="your@email.com" />
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">🔒</span>
+            <input class="form-control" type="password" placeholder="password" />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-secondary">Create</button>
+        </form>
+      </div>
     </main>
 
-    <footer>
-      <hr />
-      <span class="text-reset">About Me</span>
-      <br />
-      <a href="https://github.com/reecegeese/startup.git">GitHub</a>
+    <footer class="sticky-bottom">
+      <nav class="navbar fixed-bottom navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/reecegeese/startup.git">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </footer>
   </body>
 </html>
