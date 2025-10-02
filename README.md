@@ -86,6 +86,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Application elements** - I did complete this part of the deliverable.
 - [x] **Application text content** - I complete this part of the deliverable.
 - [x] **Application images** - I did complete this part of the deliverable.
+I added a cool blue color pallete to the whole site. I made the nav bar fit nicely to the top of the screen as well as a similar footer at the bottom. I implemented a couple tables to make the placeholder data look like it is meant to be there because it is. Added a new placeholder image. Took a long time figuring out how to properly let the page fit any screen. Most of the time the main site would clip into and under the header or footer. I gave both the header and footer backgrounds so the main would go under them but I still spent a bit making sure the main was fitted properly and you would always be able to scroll down to see the whole thing. Now it looks very pretty to look at and I'm excited to start putting in the permanent applications
 
 ## 🚀 React part 1: Routing deliverable
 
