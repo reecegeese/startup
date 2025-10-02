@@ -10,14 +10,6 @@ body {
   height: 100vh;
 }
 
-header {
-  position: fixed;
-}
-
-footer {
-  position: fixed;
-}
-
 #top_nav {
     border-bottom: solid #40a3ff medium;
     background-color: #9ecffa;

@@ -10,16 +10,6 @@ body {
   height: 100vh;
 }
 
-header {
-  height: 20vh;
-  display: flex;
-}
-
-footer {
-  height: 20vh;
-  display: flex;
-}
-
 #top_nav {
     border-bottom: solid #40a3ff medium;
     background-color: #9ecffa;
