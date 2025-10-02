@@ -5,21 +5,17 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #9ecffa; 
+  min-width: 375px;
+  background-color: #9ecffa;
+  height: 100vh;
 }
 
 header {
   position: fixed;
-  width: 100%;
-  display: flex;
-  align-items: center;
 }
 
 footer {
   position: fixed;
-  width: 100%;
-  display: flex;
-  align-items: center;
 }
 
 #top_nav {

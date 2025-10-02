@@ -7,27 +7,27 @@ body {
   flex-direction: column;
   min-width: 375px;
   background-color: #9ecffa; 
-  height: 60vh;
+  height: 100vh;
 }
 
 header {
-  height: 20vh;
   display: flex;
 }
 
 footer {
-  height: 20vh;
   display: flex;
 }
 
 #top_nav {
     border-bottom: solid #40a3ff medium;
+    background-color: #9ecffa;
     white-space: nowrap;
     overflow: hidden;
 }
 
 #bottom_nav {
     border-top: solid #40a3ff medium;
+    background-color: #9ecffa;
     white-space: nowrap;
     overflow: hidden;
 }
