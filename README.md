@@ -4,17 +4,16 @@
 
 My application will create and store a list of user inputs and track which user submitted what to the list. This can be used for family shopping lists, workplace playlists, or vacation bucket lists. It will also have the ability for in people to strike through completed tasks on the list. This list will keep track of who has crossed off what.
 
+> [!NOTE]
+> This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
 
 > [!NOTE]
->  This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
-
-> [!NOTE]
->  If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
+> If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
 
 ## 🚀 Specification Deliverable
 
 > [!NOTE]
->  Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
+> Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
@@ -86,15 +85,15 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Application elements** - I did complete this part of the deliverable.
 - [x] **Application text content** - I complete this part of the deliverable.
 - [x] **Application images** - I did complete this part of the deliverable.
-I added a cool blue color pallete to the whole site. I made the nav bar fit nicely to the top of the screen as well as a similar footer at the bottom. I implemented a couple tables to make the placeholder data look like it is meant to be there because it is. Added a new placeholder image. Took a long time figuring out how to properly let the page fit any screen. Most of the time the main site would clip into and under the header or footer. I gave both the header and footer backgrounds so the main would go under them but I still spent a bit making sure the main was fitted properly and you would always be able to scroll down to see the whole thing. Now it looks very pretty to look at and I'm excited to start putting in the permanent applications
+      I added a cool blue color pallete to the whole site. I made the nav bar fit nicely to the top of the screen as well as a similar footer at the bottom. I implemented a couple tables to make the placeholder data look like it is meant to be there because it is. Added a new placeholder image. Took a long time figuring out how to properly let the page fit any screen. Most of the time the main site would clip into and under the header or footer. I gave both the header and footer backgrounds so the main would go under them but I still spent a bit making sure the main was fitted properly and you would always be able to scroll down to see the whole thing. Now it looks very pretty to look at and I'm excited to start putting in the permanent applications
 
 ## 🚀 React part 1: Routing deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - I did not complete this part of the deliverable.
+- [x] **Bundled using Vite** - I did complete this part of the deliverable.
+- [x] **Components** - I did complete this part of the deliverable.
+- [x] **Router** - I did complete this part of the deliverable.
 
 ## 🚀 React part 2: Reactivity deliverable
 
@@ -113,7 +112,6 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
 - [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
 - [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
-
 
 ## 🚀 DB deliverable
 
