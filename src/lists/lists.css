@@ -3,10 +3,10 @@ button {
   margin: 10px;
 }
 
-#login_button {
+#add_button {
   background-color: #0088ff;
 }
 
-#create_button {
+#delete_button {
   background-color: #0088ff;
 }
