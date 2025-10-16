@@ -170,6 +170,7 @@ width is for the base device width. viewport is so it knows its html
 <link rel="stylesheet" href="style.css"> for the specific css file
 <script src=""></script> applies javascript. src stands for source
 <input type="text"> asks for user input of text specifically
+<img src="url"> for an image
 
 javascript
 form.addEventListener("type") does nothing until form is called
