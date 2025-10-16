@@ -154,8 +154,34 @@ await fetch("url")
 return
 This promise chains like promise.resolve(2).then(x).then().catch().finally()
 
-html what tags do. p, span, div
+html
+start all files with <!DOCTYPE html>
+
+<html> make html version 5
+<title> is what the tab is called in the browser
+meta is for formatting and specific letter and intergers you can type in it
+<meta charset = "UTF-8"> for what charecters we use
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+width is for the base device width. viewport is so it knows its html
+<link rel="stylesheet"> rel so it knows it a css file is coming
+<link rel="stylesheet" href="style.css"> for the specific css file
+<script src=""></script> applies javascript. src stands for source
+<input type="text"> asks for user input of text specifically
+
+form.addEventListener("type") does nothing until form is called
+on <button type="submit">Submit</button> form is waiting for type submit like from button
+Other types can by onChange or onClick. onChange updates when something changes, click is click, and submit is enter
+in javascript const form = document.getElementbyId("emailForm") gets a form from html by the id
+const form = document.getElementbyId("message") gets a message from html by the id
+message.textContent = "text" adds text to a empty html tag
+like <p id = "message">
+message.style.color = "color" ignores css and styles in javascript
+what tags do. p, span, div
+
 css how to select things
+"#" is how you get an id
+. is how you get a class
+
 javascript arrays
 
 terminal commands
@@ -177,3 +203,5 @@ rm -r - removes a directory
 ps - processes. lists everything that is currently running
 wget - downloads files from the given path
 sudo - run as an admin
+
+git clone to copy a repository
