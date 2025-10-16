@@ -191,6 +191,9 @@ background-color to change color
 font-weight: bold; makes text bold
 display: flex chnages the display to flex whichs places stuff in rows
 flex-direction: column changes the flex's direction to columns
+javascript takes priority over css
+id takes priority over class
+this is because css does the smallest thing last for id is last and stays
 
 javascript arrays
 
