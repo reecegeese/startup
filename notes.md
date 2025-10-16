@@ -141,3 +141,30 @@ Margin is outside the element
 <p id = "q"></p>
 <p class = "p"></p>
 document.query<div.p> finds all p elements
+id is specific. id is usually a /. If there are multiple id's with "q" query will find the first one
+class can be apllied to multiple. class is usually a .
+
+Promises can accept or reject. When reject is called it will return an error
+The error can then be caught and handled
+Calling resolve on a promise will accept and return the value
+consol.log is how we handle it
+async functions mean you can't go to the next value until after the promise resolves
+async f
+await fetch("url")
+return
+This promise chains like promise.resolve(2).then(x).then().catch().finally()
+
+html what tags do. p, span, div
+css how to select things
+javascript arrays
+
+terminal commands
+cmod - change permissions
+pwd - print working directry
+cd - change directory
+li - list all files
+li -a is all files
+li -l has more information like dates and permission
+vim and nano - in terminal test editors
+in vim i for insert, w for write, q to quit
+mkdir - make directory
