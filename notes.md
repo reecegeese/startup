@@ -158,6 +158,9 @@ html
 start all files with <!DOCTYPE html>
 
 <html> make html version 5
+<html lnag="eng"> sets the html to use english
+<head></head> is for title, meta, stylesheet, things that don't need to be seen
+<body></body> is where everything else goes to be seen
 <title> is what the tab is called in the browser
 meta is for formatting and specific letter and intergers you can type in it
 <meta charset = "UTF-8"> for what charecters we use
@@ -168,19 +171,26 @@ width is for the base device width. viewport is so it knows its html
 <script src=""></script> applies javascript. src stands for source
 <input type="text"> asks for user input of text specifically
 
+javascript
 form.addEventListener("type") does nothing until form is called
 on <button type="submit">Submit</button> form is waiting for type submit like from button
 Other types can by onChange or onClick. onChange updates when something changes, click is click, and submit is enter
 in javascript const form = document.getElementbyId("emailForm") gets a form from html by the id
 const form = document.getElementbyId("message") gets a message from html by the id
-message.textContent = "text" adds text to a empty html tag
+message.textContent = "text" changes whatever function to what is after the = sign
 like <p id = "message">
-message.style.color = "color" ignores css and styles in javascript
+message.style.color = "color" ignores css and styles in javascript. changes the text color
+message.style.backgroundColor is for the background color
 what tags do. p, span, div
 
 css how to select things
 "#" is how you get an id
 . is how you get a class
+font-family for font type
+background-color to change color
+font-weight: bold; makes text bold
+display: flex chnages the display to flex whichs places stuff in rows
+flex-direction: column changes the flex's direction to columns
 
 javascript arrays
 
