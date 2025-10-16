@@ -168,3 +168,12 @@ li -l has more information like dates and permission
 vim and nano - in terminal test editors
 in vim i for insert, w for write, q to quit
 mkdir - make directory
+ssh - remote shell into not your computer
+man - manual
+mv - move a file
+touch - creates file
+rm - remove a file
+rm -r - removes a directory
+ps - processes. lists everything that is currently running
+wget - downloads files from the given path
+sudo - run as an admin
