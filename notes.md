@@ -64,7 +64,17 @@ I also used SVG to make the icon and logo for the app. This turned out to be a p
 ```html
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
   <rect width="100" height="100" fill="#0066aa" rx="10" ry="10" />
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="72" font-family="Arial" fill="white">C</text>
+  <text
+    x="50%"
+    y="50%"
+    dominant-baseline="central"
+    text-anchor="middle"
+    font-size="72"
+    font-family="Arial"
+    fill="white"
+  >
+    C
+  </text>
 </svg>
 ```
 
@@ -97,6 +107,7 @@ Handling the toggling of the checkboxes was particularly interesting.
   ))}
 </div>
 ```
+
 Use the git Bash terminal inside VS Code
 
 git clone to clone
@@ -118,3 +129,15 @@ Must save with ctrl s then git add commit push every time
 Sudo password is 20 05 with a capital G
 
 ./deployFiles.sh -k ~/Downloads/reece.love2.pem -h reecelove260.click -s simon
+
+Root Domain: Regular domain. byu.edu, cs260.click. Also called top level domain
+Sub Domain: Comes before root domain. Simon, startup. simon/cs260.click
+In a map the input is input + 1
+Input = [0, 1, 2, 3, 4], input[0] = 0, input[4] = 4
+Padding is space inside the element
+Margin is outside the element
+
+<div></div>
+<p id = "q"></p>
+<p class = "p"></p>
+document.query<div.p> finds all p elements
