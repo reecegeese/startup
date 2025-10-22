@@ -1,42 +1,12 @@
 import React from "react";
 import "./lists.css";
 
-export function Lists() {
+import { Contributors } from "./contributors";
+
+export function Lists(props) {
   return (
     <main className="container-fluid text-center">
-      <div>
-        <main class="container-fluid text-center pt-5 pb-5">
-          <div>
-            <h1>Welcome *User*</h1>
-            <h2>Your current list</h2>
-            <ul class="list-unstyled">
-              <li>Tim added bacon</li>
-              <li>Ada added juice</li>
-              <li>Tim deleted cake</li>
-            </ul>
-            <form method="get" action="play.html">
-              <div class="input-group mb-3">
-                <span class="input-group-text">@</span>
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Add an item"
-                />
-              </div>
-              <button type="submit" class="btn btn-primary" id="add_button">
-                Add
-              </button>
-              <button
-                type="submit"
-                class="btn btn-secondary"
-                id="delete_button"
-              >
-                Delete
-              </button>
-            </form>
-          </div>
-        </main>
-      </div>
+      <Contributors userName={props.userName} />
     </main>
   );
 }
