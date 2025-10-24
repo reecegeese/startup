@@ -19,7 +19,7 @@ class EventNotifier {
     setInterval(() => {
       const item = Math.floor(Math.random() * 3000);
       const date = new Date().toLocaleDateString();
-      const userName = "Someone";
+      const userName = "You";
       this.broadcastEvent(userName, Event.End, {
         name: userName,
         item: item,
