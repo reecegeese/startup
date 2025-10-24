@@ -57,10 +57,10 @@ export function Contributors(props) {
           <span class="input-group-text">@</span>
           <input class="form-control" type="text" placeholder="Add an item" />
         </div>
-        <button type="submit" class="btn btn-primary" id="add_button">
+        <button type="button" class="btn btn-primary" id="add_button">
           Add
         </button>
-        <button type="submit" class="btn btn-secondary" id="delete_button">
+        <button type="button" class="btn btn-secondary" id="delete_button">
           Delete
         </button>
       </form>

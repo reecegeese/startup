@@ -87,7 +87,7 @@ export function EmailCollector(props) {
             Login
           </button>
           <button
-            type="submit"
+            type="button"
             className="btn btn-secondary"
             id="create_button"
           >
