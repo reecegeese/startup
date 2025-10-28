@@ -27,15 +27,23 @@ export function Contributors(props) {
   function handleAddClick(e) {
     e.preventDefault();
     if (!item) return;
-
     const newEvent = {
       from: userName,
       type: Event.End,
       item,
     };
-
     setEvents((prev) => [newEvent, ...prev]);
     setItem("");
+  }
+
+  function handleDeleteClick(e) {
+    e.preventDefault();
+
+    setEvents((prevEvents) => {
+      const updated = [...prevEvents];
+      updated.shift();
+      return updated;
+    });
   }
 
   function createMessageArray() {
@@ -77,7 +85,12 @@ export function Contributors(props) {
         >
           Add
         </Button>
-        <Button class="btn btn-secondary" id="delete_button" disabled>
+        <Button
+          class="btn btn-secondary"
+          id="delete_button"
+          onClick={handleDeleteClick}
+          disabled={events.length === 0}
+        >
           Delete
         </Button>
       </form>

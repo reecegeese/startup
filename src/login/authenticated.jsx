@@ -18,7 +18,7 @@ export function Authenticated(props) {
       <Button
         variant="primary"
         id="login_button"
-        onClick={() => navigate("/play")}
+        onClick={() => navigate("/lists")}
       >
         Create List
       </Button>
