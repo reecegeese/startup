@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { Login } from "./login/login";
-import { Play } from "./play/play";
-import { Scores } from "./scores/scores";
+import { Lists } from "./lists/lists";
+import { Groups } from "./groups/groups";
 import { About } from "./about/about";
 import { AuthState } from "./login/authState";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -33,15 +33,15 @@ function App() {
               </li>
               {authState === AuthState.Authenticated && (
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="play">
-                    Play
+                  <NavLink className="nav-link" to="lists">
+                    Lists
                   </NavLink>
                 </li>
               )}
               {authState === AuthState.Authenticated && (
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="scores">
-                    Scores
+                  <NavLink className="nav-link" to="groups">
+                    Groups
                   </NavLink>
                 </li>
               )}
@@ -69,8 +69,8 @@ function App() {
             }
             exact
           />
-          <Route path="/play" element={<Play userName={userName} />} />
-          <Route path="/scores" element={<Scores />} />
+          <Route path="/lists" element={<Lists userName={userName} />} />
+          <Route path="/groups" element={<Groups />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
