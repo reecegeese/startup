@@ -9,6 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
 function App() {
+  const [events, setEvents] = React.useState([]);
+  const [sharedEvents, setSharedEvents] = React.useState([]);
   const [userName, setUserName] = React.useState(
     localStorage.getItem("userName") || ""
   );
@@ -69,8 +71,19 @@ function App() {
             }
             exact
           />
-          <Route path="/lists" element={<Lists userName={userName} />} />
-          <Route path="/groups" element={<Groups />} />
+          <Route
+            path="/lists"
+            element={
+              <Lists
+                onInit={(events) => setSharedEvents(events)}
+                userName={userName}
+              />
+            }
+          />
+          <Route
+            path="/groups"
+            element={<Groups events={sharedEvents} userName={userName} />}
+          />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

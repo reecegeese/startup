@@ -14,20 +14,6 @@ class EventNotifier {
   events = [];
   handlers = [];
 
-  constructor() {
-    // Simulate chat messages that will eventually come over WebSocket
-    setInterval(() => {
-      const item = Math.floor(Math.random() * 3000);
-      const date = new Date().toLocaleDateString();
-      const userName = "Someone";
-      this.broadcastEvent(userName, Event.End, {
-        name: userName,
-        item: item,
-        date: date,
-      });
-    }, 5000);
-  }
-
   broadcastEvent(from, type, value) {
     const event = new EventMessage(from, type, value);
     this.receiveEvent(event);
