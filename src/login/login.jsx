@@ -1,12 +1,29 @@
 import React from "react";
-import "./login.css";
 
-import { EmailCollector } from "./emailCollector";
+import { Unauthenticated } from "./unauthenticated";
+import { Authenticated } from "./authenticated";
+import { AuthState } from "./authState";
 
-export function Login(props) {
+export function Login({ userName, authState, onAuthChange }) {
   return (
     <main className="container-fluid text-center">
-      <EmailCollector userName={props.userName} />
+      <div>
+        {authState !== AuthState.Unknown && <h1>Welcome to List Maker</h1>}
+        {authState === AuthState.Authenticated && (
+          <Authenticated
+            userName={userName}
+            onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)}
+          />
+        )}
+        {authState === AuthState.Unauthenticated && (
+          <Unauthenticated
+            userName={userName}
+            onLogin={(loginUserName) => {
+              onAuthChange(loginUserName, AuthState.Authenticated);
+            }}
+          />
+        )}
+      </div>
     </main>
   );
 }

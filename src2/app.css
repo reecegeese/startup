@@ -58,12 +58,3 @@ footer a {
   float: right;
   text-decoration: none;
 }
-
-@media (max-height: 600px) {
-  header {
-    display: none;
-  }
-  footer {
-    display: none;
-  }
-}
