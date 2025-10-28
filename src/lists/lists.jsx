@@ -6,7 +6,11 @@ import { Contributors } from "./contributors";
 export function Lists(props) {
   return (
     <main className="container-fluid text-center">
-      <Contributors userName={props.userName} />
+      <Contributors
+        userName={props.userName}
+        items={props.list}
+        onInit={props.onInit}
+      />
     </main>
   );
 }

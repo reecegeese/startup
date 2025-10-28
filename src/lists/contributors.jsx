@@ -6,8 +6,7 @@ import Button from "react-bootstrap/Button";
 
 export function Contributors(props) {
   const userName = props.userName;
-  const [item, newItem] = React.useState("");
-  const [events, setEvents] = React.useState([]);
+  const [textBox, setText] = React.useState([]);
 
   React.useEffect(() => {
     Notifier.addHandler(handleEvent);
@@ -26,20 +25,20 @@ export function Contributors(props) {
 
   function handleAddClick(e) {
     e.preventDefault();
-    if (!item) return;
+    if (!textBox) return;
     const newEvent = {
       from: userName,
       type: Event.End,
-      item,
+      item: textBox,
     };
-    setEvents((prev) => [newEvent, ...prev]);
-    setItem("");
+    props.onInit((prev) => [newEvent, ...prev]);
+    setText(textBox);
   }
 
   function handleDeleteClick(e) {
     e.preventDefault();
 
-    setEvents((prevEvents) => {
+    props.onInit((prevEvents) => {
       const updated = [...prevEvents];
       updated.shift();
       return updated;
@@ -47,7 +46,7 @@ export function Contributors(props) {
   }
 
   function createMessageArray() {
-    return events.map((event, i) => {
+    return props.items.map((event, i) => {
       let message = "unknown";
       if (event.type === Event.End) {
         message = `${event.from} added ${event.item}`;
@@ -67,29 +66,30 @@ export function Contributors(props) {
       <h2>Your current list</h2>
       <div id="contributor-messages">{createMessageArray()}</div>
       <form onSubmit={handleAddClick}>
-        <div class="input-group mb-3">
-          <span class="input-group-text">@</span>
+        <div className="input-group mb-3">
+          <span className="input-group-text">@</span>
           <input
-            class="form-control"
+            className="form-control"
             type="text"
-            value={item}
-            onChange={(e) => newItem(e.target.value)}
+            value={textBox}
+            s
+            onChange={(e) => setText(e.target.value)}
             placeholder="Add an item"
           />
         </div>
         <Button
           type="submit"
-          class="btn btn-primary"
+          className="btn btn-primary"
           id="add_button"
-          disabled={!item}
+          disabled={!textBox}
         >
           Add
         </Button>
         <Button
-          class="btn btn-secondary"
+          className="btn btn-secondary"
           id="delete_button"
           onClick={handleDeleteClick}
-          disabled={events.length === 0}
+          disabled={props.items.length === 0}
         >
           Delete
         </Button>

@@ -76,13 +76,20 @@ function App() {
             element={
               <Lists
                 onInit={(events) => setSharedEvents(events)}
+                list={sharedEvents}
                 userName={userName}
               />
             }
           />
           <Route
             path="/groups"
-            element={<Groups events={sharedEvents} userName={userName} />}
+            element={
+              <Groups
+                onInit={(events) => setSharedEvents(events)}
+                list={sharedEvents}
+                userName={userName}
+              />
+            }
           />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
