@@ -112,6 +112,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Backend service endpoints** - I did complete this part of the deliverable.
 - [x] **Frontend calls service endpoints** - I did complete this part of the deliverable.
 - [x] **Supports registration, login, logout, and restricted endpoint** - I did complete this part of the deliverable.
+      I added a random quote generator, the same one in the simon service example, to my about page. I added some css to it so it fits my website and looks nice. I also combined the login and create buttons of the login page into a single button for simplicity
 
 ## 🚀 DB deliverable
 
