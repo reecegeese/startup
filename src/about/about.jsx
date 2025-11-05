@@ -1,7 +1,22 @@
 import React from "react";
 import "./about.css";
 
-export function About() {
+export function About(props) {
+  const [quote, setQuote] = React.useState("Loading...");
+  const [quoteAuthor, setQuoteAuthor] = React.useState("unknown");
+
+  React.useEffect(() => {
+    const random = Math.floor(Math.random() * 1000);
+
+    fetch("https://quote.cs260.click")
+      .then((response) => response.json())
+      .then((data) => {
+        setQuote(data.quote);
+        setQuoteAuthor(data.author);
+      })
+      .catch();
+  }, []);
+
   return (
     <main className="container-fluid text-center">
       <div>
@@ -33,6 +48,10 @@ export function About() {
             And this line will do the same with a random quote or fact or
             somthing. I don't know yet. I'll see what's funny and pick that
           </p>
+          <div className="quote-box">
+            <p className="quote">{quote}</p>
+            <p className="author">{quoteAuthor}</p>
+          </div>
         </main>
       </div>
     </main>
