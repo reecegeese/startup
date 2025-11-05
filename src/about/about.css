@@ -4,5 +4,10 @@ img {
 }
 
 .quote-box {
-  background-color: #ffffff;
+  background-color: #82c5fe;
+  border: solid #5eb1ff medium;
+}
+
+.quote {
+  padding: 2%;
 }

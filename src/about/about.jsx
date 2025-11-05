@@ -48,9 +48,9 @@ export function About(props) {
             And this line will do the same with a random quote or fact or
             somthing. I don't know yet. I'll see what's funny and pick that
           </p>
-          <div className="quote-box">
-            <p className="quote">{quote}</p>
-            <p className="author">{quoteAuthor}</p>
+          <div className="container-fluid text-center w-50 quote-box">
+            <p className="quote">"{quote}"</p>
+            <p className="author">-{quoteAuthor}</p>
           </div>
         </main>
       </div>
