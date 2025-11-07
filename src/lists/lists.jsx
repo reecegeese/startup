@@ -2,15 +2,18 @@ import React from "react";
 import "./lists.css";
 
 import { Contributors } from "./contributors";
+import { AuthState } from "./authState";
 
-export function Lists(props) {
+export function Lists({ props, authState }) {
   return (
     <main className="container-fluid text-center">
-      <Contributors
-        userName={props.userName}
-        items={props.list}
-        onInit={props.onInit}
-      />
+      {authState === AuthState.Authenticated && (
+        <Contributors
+          userName={props.userName}
+          items={props.list}
+          onInit={props.onInit}
+        />
+      )}
     </main>
   );
 }
