@@ -76,6 +76,7 @@ function App() {
             element={
               <Lists
                 onInit={(events) => setSharedEvents(events)}
+                authState={authState}
                 list={sharedEvents}
                 userName={userName}
               />
@@ -86,6 +87,7 @@ function App() {
             element={
               <Groups
                 onInit={(events) => setSharedEvents(events)}
+                authState={authState}
                 list={sharedEvents}
                 userName={userName}
               />
