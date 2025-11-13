@@ -1,27 +1,14 @@
-import React from 'react';
-import './about.css';
+import React from "react";
+import "./about.css";
 
 export function About(props) {
-  const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
-  const [quote, setQuote] = React.useState('Loading...');
-  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
+  const [quote, setQuote] = React.useState("Loading...");
+  const [quoteAuthor, setQuoteAuthor] = React.useState("unknown");
 
-  // We only want this to render the first time the component is created and so we provide an empty dependency list.
   React.useEffect(() => {
     const random = Math.floor(Math.random() * 1000);
-    fetch(`https://picsum.photos/v2/list?page=${random}&limit=1`)
-      .then((response) => response.json())
-      .then((data) => {
-        const containerEl = document.querySelector('#picture');
 
-        const width = containerEl.offsetWidth;
-        const height = containerEl.offsetHeight;
-        const apiUrl = `https://picsum.photos/id/${data[0].id}/${width}/${height}?grayscale`;
-        setImageUrl(apiUrl);
-      })
-      .catch();
-
-    fetch('https://quote.cs260.click')
+    fetch("https://quote.cs260.click")
       .then((response) => response.json())
       .then((data) => {
         setQuote(data.quote);
@@ -30,30 +17,42 @@ export function About(props) {
       .catch();
   }, []);
 
-  let imgEl = '';
-
-  if (imageUrl) {
-    imgEl = <img src={imageUrl} alt='stock background' />;
-  }
-
   return (
-    <main className='container-fluid bg-secondary text-center'>
+    <main className="container-fluid text-center">
       <div>
-        <div id='picture' className='picture-box'>
-          {imgEl}
-        </div>
+        <main className="container-fluid text-center pt-5 pb-5">
+          <div id="picture" class="picture-box">
+            <img src="Staring Cat.PNG" alt="random cat" />
+          </div>
 
-        <p>Simon is a repetitive memory game where you follow the demonstrated color sequence until you make a mistake. The longer the sequence you repeat, the greater your score.</p>
+          <p className="w-50">
+            List maker is the perfect way for any group to easily collect and
+            complete a list of anything. From grocery shopping to household
+            chorse, list maker has got it covered. Just create your group, add
+            its members, and get to making your list. You can see everything in
+            the list as well as who added something, who deleted something and
+            who crossed something off
+          </p>
 
-        <p>
-          The name Simon is a registered trademark of Milton-Bradley. Our use of the name and the game is for non-profit educational use only. No part of this code or application may be used outside
-          of that definition.
-        </p>
+          <p className="w-50">
+            I could easily copyright this idea and make a billion dollars out of
+            law suits and retire in my mansion on the moon. Fortunatly for you
+            i'm a nice person so this site is COMPLETLY FREE. Lucky you.
+          </p>
 
-        <div className='quote-box bg-light text-dark'>
-          <p className='quote'>{quote}</p>
-          <p className='author'>{quoteAuthor}</p>
-        </div>
+          <p className="w-50">
+            That cat staring at you is hard coded but will eventually be
+            randomized and show you a new picture every time you open this page
+          </p>
+          <p className="w-50">
+            And this line will do the same with a random quote or fact or
+            somthing. I don't know yet. I'll see what's funny and pick that
+          </p>
+          <div className="container-fluid text-center w-50 quote-box">
+            <p className="quote">"{quote}"</p>
+            <p className="author">-{quoteAuthor}</p>
+          </div>
+        </main>
       </div>
     </main>
   );

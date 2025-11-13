@@ -1,31 +1,13 @@
-.picture-box {
-  height: calc(100px + 1em);
-  margin-bottom: 1em;
-  padding: 0.5em;
-  background: rgb(86, 89, 93);
-  border-radius: 5px;
+img {
+  height: 100px;
+  width: 100%;
 }
 
 .quote-box {
-  margin-top: 1em;
-  padding: 0.5em;
-  border-radius: 5px;
+  background-color: #82c5fe;
+  border: solid #5eb1ff medium;
 }
 
 .quote {
-  font-style: italic;
-}
-
-.author {
-  font-weight: bold;
-  text-align: right;
-}
-
-.author::before {
-  content: " - ";
-}
-
-#picture img {
-  width: 100%;
-  height: 100%;
+  padding: 2%;
 }

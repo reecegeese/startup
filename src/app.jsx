@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
 function App() {
+  const [sharedEvents, setSharedEvents] = React.useState([]);
   const [userName, setUserName] = React.useState(
     localStorage.getItem("userName") || ""
   );
