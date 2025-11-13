@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import './scores.css';
+import "./groups.css";
 
-export function Scores() {
+export function Scores(props) {
   const [scores, setScores] = React.useState([]);
 
   // Demonstrates calling a service asynchronously so that
   // React can properly update state objects with the results.
   React.useEffect(() => {
-    fetch('/api/scores')
+    fetch("/api/scores")
       .then((response) => response.json())
       .then((scores) => {
         setScores(scores);
@@ -22,7 +22,7 @@ export function Scores() {
       scoreRows.push(
         <tr key={i}>
           <td>{i}</td>
-          <td>{score.name.split('@')[0]}</td>
+          <td>{score.name.split("@")[0]}</td>
           <td>{score.score}</td>
           <td>{score.date}</td>
         </tr>
@@ -30,25 +30,20 @@ export function Scores() {
     }
   } else {
     scoreRows.push(
-      <tr key='0'>
-        <td colSpan='4'>Be the first to score</td>
+      <tr key="0">
+        <td colSpan="4">Be the first to score</td>
       </tr>
     );
   }
 
   return (
-    <main className='container-fluid bg-secondary text-center'>
-      <table className='table table-warning table-striped-columns'>
-        <thead className='table-dark'>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Score</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody id='scores'>{scoreRows}</tbody>
-      </table>
+    <main className="container-fluid text-center">
+      <div className="contributors">
+        <h1>{userName}'s lists</h1>
+        <div id="contributor-messages">
+          {props.list.length > 0 && <p>{userName} has 1 list</p>}
+        </div>
+      </div>
     </main>
   );
 }

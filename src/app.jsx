@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { Login } from "./login/login";
-import { Play } from "./play/play";
+import { Lists } from "./lists/lists";
 import { Scores } from "./scores/scores";
 import { About } from "./about/about";
 import { AuthState } from "./login/authState";
@@ -34,7 +34,7 @@ function App() {
               </li>
               {authState === AuthState.Authenticated && (
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="play">
+                  <NavLink className="nav-link" to="lists">
                     Lists
                   </NavLink>
                 </li>
@@ -68,12 +68,11 @@ function App() {
                 }}
               />
             }
-            exact
           />
           <Route
-            path="/play"
+            path="/lists"
             element={
-              <Play
+              <Lists
                 onInit={(events) => setSharedEvents(events)}
                 list={sharedEvents}
                 userName={userName}
