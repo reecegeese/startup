@@ -75,7 +75,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
 
-        <footer className="bg-dark text-dark text-muted">
+        <footer className="">
           <div className="container-fluid">
             <span className="text-reset">Created by Reece Loveridge</span>
             <a

@@ -1,0 +1,20 @@
+button {
+  background-color: #0088ff;
+  margin: 10px;
+}
+
+#login_button {
+  background-color: #0088ff;
+  margin: 10px;
+}
+
+#create_button {
+  background-color: #0088ff;
+  margin: 10px;
+}
+
+.playerName {
+  color: rgb(0, 76, 255);
+  font-size: 1.5em;
+  padding: 0.5em;
+}
