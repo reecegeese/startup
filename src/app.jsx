@@ -1,16 +1,14 @@
 import React from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { Login } from "./login/login";
-import { Lists } from "./lists/lists";
-import { Groups } from "./groups/groups";
+import { Play } from "./play/play";
+import { Scores } from "./scores/scores";
 import { About } from "./about/about";
 import { AuthState } from "./login/authState";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
 function App() {
-  const [events, setEvents] = React.useState([]);
-  const [sharedEvents, setSharedEvents] = React.useState([]);
   const [userName, setUserName] = React.useState(
     localStorage.getItem("userName") || ""
   );
@@ -35,15 +33,15 @@ function App() {
               </li>
               {authState === AuthState.Authenticated && (
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="lists">
-                    Lists
+                  <NavLink className="nav-link" to="play">
+                    Play
                   </NavLink>
                 </li>
               )}
               {authState === AuthState.Authenticated && (
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="groups">
-                    Groups
+                  <NavLink className="nav-link" to="scores">
+                    Scores
                   </NavLink>
                 </li>
               )}
@@ -71,33 +69,13 @@ function App() {
             }
             exact
           />
-          <Route
-            path="/lists"
-            element={
-              <Lists
-                onInit={(events) => setSharedEvents(events)}
-                authState={authState}
-                list={sharedEvents}
-                userName={userName}
-              />
-            }
-          />
-          <Route
-            path="/groups"
-            element={
-              <Groups
-                onInit={(events) => setSharedEvents(events)}
-                authState={authState}
-                list={sharedEvents}
-                userName={userName}
-              />
-            }
-          />
+          <Route path="/play" element={<Play userName={userName} />} />
+          <Route path="/scores" element={<Scores />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
-        <footer className="">
+        <footer className="bg-dark text-dark text-muted">
           <div className="container-fluid">
             <span className="text-reset">Created by Reece Loveridge</span>
             <a

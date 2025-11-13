@@ -1,19 +1,14 @@
-# Community List Maker
+# Simon
 
 [My Notes](notes.md)
 
-My application will create and store a list of user inputs and track which user submitted what to the list. This can be used for family shopping lists, workplace playlists, or vacation bucket lists. It will also have the ability for in people to strike through completed tasks on the list. This list will keep track of who has crossed off what.
+In 1978 Milton-Bradley, now Hasbro, released an electronic game named Simon. It was cutting edge at the time since there were so few electronic games, and all the cool kids had one.
 
-> [!NOTE]
-> This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
-
-> [!NOTE]
-> If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
+We are going to build a peer to peer multiplayer web application modeled after Simon. We will build it together by adding new functionality every time we learn a new technology. The example version of code and production deployment for each iteration are available to you. Your job will be to review the example and then deploy it to your production environment. The goal is to make you think about every line of code. Ask, "why is it done this way?" and "Is there a better way?". You can then take what you have learned, or even portions of the Simon code, and apply it to your Startup application.
 
 ## 🚀 Specification Deliverable
 
-> [!NOTE]
-> Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
+Simon is a simple game where you repeat a sequence of color flashes. The longer sequence you repeat the higher your score is.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
@@ -25,108 +20,108 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-I have made a super quick and easy way for a group of people to contribute to a list everyone can see. All you have to do is login, create a list, add contributors, and start adding to the list. Anyone can add to this list, everyone can see who added what to the list, and everyone can see what has been crossed off and who crossed it off.
+A mind is a beautiful thing, but it needs stimulation. Lights, color, sound, and action. Simon give you hours of fun as you complete to remember the longest sequence of colors. See if you can top the charts with you efforts. Receive automatic notification of how your friends are doing.
 
 ### Design
 
-![Main screen](listmaker1.png)
-![List screen](listmaker2.png)
+![Design](designDiagram.png)
 
-These scetches are rough drafts of what I imagine my application looking like. On the left is the main screen where the user is prompted to name their list and create it. On the right is what I envision the live feed of the list looking like to the users. It provides all the objects in the list, who added them, and clearly shows what has been crossed off
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```mermaid
+sequenceDiagram
+    actor User
+    User->>Login: Enter login information
+    Login->>About: See about information
+    About-->>Login: Login
+    About->>About: Read inspirational quote
+    Login->>Play: Start game
+    Play->>Play: repeat sequences
+    Play->>Play: View other player's game notifications
+    Play-->>Login: Logout
+    Login-->>Scores: view high scores
+```
 
 ### Key features
 
-- Creating a list
-- Adding contributors to the list
-- Anyone can see the lsit
-- Anyone can add to the list
-- Anyone can cross objects off the list
-- Show who added what to the list
-- Show who crossed what off the list
+- Login, logout, and register
+- See high scores
+- Receive notifications for other player's achievements
+- Play by repeating color sequences
+- See a description of the app
+- Read inspirational quotes
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Print out format of the application and list
-- **CSS** - Making the layout of the list visually pleasing
-- **React** - Prompt users to login then ask if they want to create or join a list and bring them to that list
-- **Service** - Store the list name, additions, users, who added what, who crossed off what, and what is crossed off. Also provide a random usless fact via the Random Useless Facts API
-- **DB/Login** - Provide the total number of list items and how many have not been crossed off
-- **WebSocket** - Update additions to the list and what has been crossed off in real time for all users
+- **HTML** - Four different views, login/register controls, play, scoreboard, and about.
+- **CSS** - Complementary color scheme, responsive design, button highlighting during play.
+- **React** - Single page application with routing between views, reactive user controls, and state hooks.
+- **Service** - Endpoints for authentication, storing/retrieving scores. Third party call to get inspirational quotes.
+- **DB/Login** - Stores authentication and scores.
+- **WebSocket** - Broadcast user's game notifications.
 
 ## 🚀 AWS deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Server deployed and accessible with custom domain name** - [My server link](https://reecelove260.click).
+- [x] **Server deployed and accessible with custom domain name** - [My server link](https://simon.cs260.click).
 
 ## 🚀 HTML deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **HTML pages** - I did complete this part of the deliverable.
-- [x] **Proper HTML element usage** - I did complete this part of the deliverable.
-- [x] **Links** - I did complete this part of the deliverable.
-- [x] **Text** - I did complete this part of the deliverable.
-- [x] **3rd party API placeholder** - I did complete this part of the deliverable.
-- [x] **Images** - I did complete this part of the deliverable.
-- [x] **Login placeholder** - I did complete this part of the deliverable.
-- [x] **DB data placeholder** - I did complete this part of the deliverable.
-- [x] **WebSocket placeholder** - I did complete this part of the deliverable.
+- [x] **HTML pages** - Four different pages. One for each view.
+- [x] **Proper HTML element usage** - I spent a lot of time learning about elements. I used header, footer, main, nav, img, a, fieldset, input, button, form, and many more.
+- [x] **Links** - Links between views.
+- [x] **Text** - About page has text.
+- [x] **3rd party API placeholder** - About page has a place to display an inspirational quote.
+- [x] **Images** - Image is displayed on the about page.
+- [x] **Login placeholder** - Placeholder for auth on the login page.
+- [x] **DB data placeholder** - High scores displayed on scores page.
+- [x] **WebSocket placeholder** - The play page has a text area that will show what other user notifications.
 
 ## 🚀 CSS deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Header, footer, and main content body** - I did complete this part of the deliverable.
-- [x] **Navigation elements** - I did complete this part of the deliverable.
-- [x] **Responsive to window resizing** - I did complete this part of the deliverable.
-- [x] **Application elements** - I did complete this part of the deliverable.
-- [x] **Application text content** - I complete this part of the deliverable.
-- [x] **Application images** - I did complete this part of the deliverable.
-      I added a cool blue color pallete to the whole site. I made the nav bar fit nicely to the top of the screen as well as a similar footer at the bottom. I implemented a couple tables to make the placeholder data look like it is meant to be there because it is. Added a new placeholder image. Took a long time figuring out how to properly let the page fit any screen. Most of the time the main site would clip into and under the header or footer. I gave both the header and footer backgrounds so the main would go under them but I still spent a bit making sure the main was fitted properly and you would always be able to scroll down to see the whole thing. Now it looks very pretty to look at and I'm excited to start putting in the permanent applications
+- [x] **Header, footer, and main content body** - I used a common CSS file to style these (main.css).
+- [x] **Navigation elements** - Bootstrap NavBar. What a time saver.
+- [x] **Responsive to window resizing** - Bootstrap and `display:flex' did most the work here. I'm really happy with the game rendering.
+- [x] **Application elements** - I used a lot of `display:flex` to get things to align correctly.
+- [x] **Application text content** - Set all my text to Helvetica and it looks nice and clean.
+- [x] **Application images** - I left the about image as is.
 
 ## 🚀 React part 1: Routing deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Bundled using Vite** - I did complete this part of the deliverable.
-- [x] **Components** - I did complete this part of the deliverable.
-- [x] **Router** - I did complete this part of the deliverable.
+- [x] **Bundled using Vite** - Easy to install and use Vite.
+- [x] **Components** - Easy to bring the code over from HTML and CSS, but had to rework them quite a bit.
+- [x] **Router** - Easy to creating the component routing.
 
-## 🚀 React part 2: Reactivity deliverable
+## 🚀 React part 2: Reactivity
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **All functionality implemented or mocked out** - I did complete this part of the deliverable.
-- [x] **Hooks** - I did complete this part of the deliverable.
+- [x] **All functionality implemented or mocked out** - Mostly using local storage to store user and scores. WebSocket notifications mocked with a timer.
+- [x] **Hooks** - Extensive use of `useEffect`. I also had to use `useRef` so that the play top level component could execute the color sequence for the user on the child button components.
 
 ## 🚀 Service deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Node.js/Express HTTP service** - I did complete this part of the deliverable.
-- [x] **Static middleware for frontend** - I did complete this part of the deliverable.
-- [x] **Calls to third party endpoints** - I did complete this part of the deliverable.
-- [x] **Backend service endpoints** - I did complete this part of the deliverable.
-- [x] **Frontend calls service endpoints** - I did complete this part of the deliverable.
-- [x] **Supports registration, login, logout, and restricted endpoint** - I did complete this part of the deliverable.
-      I added a random quote generator, the same one in the simon service example, to my about page. I added some css to it so it fits my website and looks nice. I also combined the login and create buttons of the login page into a single button for simplicity
+- [x] **Node.js/Express HTTP service** - Installed Express with NPM. Default port on 4000.js`.
+- [x] **Static middleware for frontend** - Simple endpoints in `service/index`.
+- [x] **Calls to third party endpoints** - About page calls `quote.cs260.click`, renders the resulting JSON with React.
+- [x] **Backend service endpoints** - Simple endpoints in `service/index` for auth and scores. Persists to memory until I get database support.
+- [x] **Frontend calls service endpoints** - All mocked functionality removed from the frontend and replaced with calls to the service.
+- [x] **Supports registration, login, logout, and restricted endpoint** - Fully support authentication and restrict access to scores.
 
-## 🚀 DB deliverable
-
-For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
-
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
-
-## 🚀 WebSocket deliverable
+## 🚀 DB/Login deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [x] **Stores data in MongoDB** - Scores stored in MongoDB from `service/database.js`.
+- [x] **Stores credentials in MongoDB** - Auth stored in MongoDB from `service/database.js`.
