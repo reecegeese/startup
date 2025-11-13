@@ -1,7 +1,5 @@
-const GameEvent = {
+const Event = {
   System: "system",
-  End: "gameEnd",
-  Start: "gameStart",
 };
 
 class EventMessage {
@@ -12,7 +10,7 @@ class EventMessage {
   }
 }
 
-class GameEventNotifier {
+class EventNotifier {
   events = [];
   handlers = [];
 
@@ -22,7 +20,7 @@ class GameEventNotifier {
       const score = Math.floor(Math.random() * 3000);
       const date = new Date().toLocaleDateString();
       const userName = "Berners-Lee";
-      this.broadcastEvent(userName, GameEvent.End, {
+      this.broadcastEvent(userName, Event.End, {
         name: userName,
         score: score,
         date: date,
@@ -54,5 +52,5 @@ class GameEventNotifier {
   }
 }
 
-const GameNotifier = new GameEventNotifier();
-export { GameEvent, GameNotifier };
+const Notifier = new EventNotifier();
+export { Event, Notifier };

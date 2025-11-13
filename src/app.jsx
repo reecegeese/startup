@@ -35,7 +35,7 @@ function App() {
               {authState === AuthState.Authenticated && (
                 <li className="nav-item">
                   <NavLink className="nav-link" to="play">
-                    Play
+                    Lists
                   </NavLink>
                 </li>
               )}
@@ -70,7 +70,16 @@ function App() {
             }
             exact
           />
-          <Route path="/play" element={<Play userName={userName} />} />
+          <Route
+            path="/play"
+            element={
+              <Play
+                onInit={(events) => setSharedEvents(events)}
+                list={sharedEvents}
+                userName={userName}
+              />
+            }
+          />
           <Route path="/scores" element={<Scores />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
