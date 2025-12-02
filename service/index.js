@@ -84,13 +84,11 @@ apiRouter.post("/groups", verifyAuth, async (req, res) => {
 });
 
 apiRouter.get("/lists", verifyAuth, async (req, res) => {
-  //const scores = await DB.getHighScores();
-  res.send(groups);
+  res.send(lists);
 });
 
 apiRouter.post("/lists", verifyAuth, async (req, res) => {
-  //const scores = updateScores(req.body);
-  res.send(groups);
+  res.send(lists);
 });
 
 // Default error handler
