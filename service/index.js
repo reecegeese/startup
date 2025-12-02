@@ -71,6 +71,24 @@ const verifyAuth = async (req, res, next) => {
   }
 };
 
+// GetScores
+apiRouter.get("/groups", verifyAuth, async (req, res) => {
+  res.send(groups);
+});
+
+// SubmitScore
+apiRouter.post("/groups", verifyAuth, async (req, res) => {
+  res.send(groups);
+});
+
+apiRouter.get("/lists", verifyAuth, async (req, res) => {
+  res.send(lists);
+});
+
+apiRouter.post("/lists", verifyAuth, async (req, res) => {
+  res.send(lists);
+});
+
 // Default error handler
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });
