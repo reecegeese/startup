@@ -71,26 +71,6 @@ const verifyAuth = async (req, res, next) => {
   }
 };
 
-// GetScores
-apiRouter.get("/groups", verifyAuth, async (req, res) => {
-  //const scores = await DB.getHighScores();
-  res.send(groups);
-});
-
-// SubmitScore
-apiRouter.post("/groups", verifyAuth, async (req, res) => {
-  //const scores = updateScores(req.body);
-  res.send(groups);
-});
-
-apiRouter.get("/lists", verifyAuth, async (req, res) => {
-  res.send(lists);
-});
-
-apiRouter.post("/lists", verifyAuth, async (req, res) => {
-  res.send(lists);
-});
-
 // Default error handler
 app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });
@@ -100,12 +80,6 @@ app.use(function (err, req, res, next) {
 app.use((_req, res) => {
   res.sendFile("index.html", { root: "public" });
 });
-
-// updateScores considers a new score for inclusion in the high scores.
-// async function updateScores(newScore) {
-//   await DB.addScore(newScore);
-//   return DB.getHighScores();
-// }
 
 async function createUser(email, password) {
   const passwordHash = await bcrypt.hash(password, 10);
