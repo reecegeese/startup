@@ -16,6 +16,7 @@ button {
 .global-box {
   background-color: #82c5fe;
   border: solid #5eb1ff medium;
+  margin: 10px;
 }
 
 .globalText {
