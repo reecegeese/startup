@@ -10,6 +10,7 @@ export function Lists(props) {
   const [events, setEvent] = React.useState([]);
   const items = props.list;
   const navigate = useNavigate();
+  const [globalMessages, setGlobalMessages] = React.useState([]);
 
   React.useEffect(() => {
     Notifier.addHandler(handleEvent);
@@ -40,7 +41,11 @@ export function Lists(props) {
       item: textBox,
     };
     props.onInit((prev) => [newEvent, ...prev]);
+    setGlobalMessages((prev) => [newEvent, ...prev]);
     setText("");
+    setTimeout(() => {
+      setGlobalMessages((prev) => prev.filter((ev) => ev.id !== newEvent.id));
+    }, 30000);
   }
 
   function handleDeleteClick(e) {
@@ -68,26 +73,12 @@ export function Lists(props) {
   }
 
   function createGlobalMessage() {
-    return items.map((event) => (
-      <globalMessage
-        key={event.id}
-        event={event}
-        onExpire={(id) =>
-          props.onInit((prev) => prev.filter((ev) => ev.id !== id))
-        }
-      />
+    return globalMessages.map((event) => (
+      <GlobalMessage key={event.id} event={event} />
     ));
   }
 
-  function globalMessage({ event, onExpire }) {
-    React.useEffect(() => {
-      const timer = setTimeout(() => {
-        onExpire(event.id);
-      }, 30000);
-
-      return () => clearTimeout(timer);
-    }, [event.id, onExpire]);
-
+  function GlobalMessage({ event }) {
     let message = "unknown";
     if (event.type === Event.End) {
       message = `${event.from} added ${event.item}`;
