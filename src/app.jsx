@@ -76,6 +76,7 @@ function App() {
                 onInit={(events) => setSharedEvents(events)}
                 list={sharedEvents}
                 userName={userName}
+                authState={authState}
               />
             }
           />
@@ -86,6 +87,7 @@ function App() {
                 onInit={(events) => setSharedEvents(events)}
                 list={sharedEvents}
                 userName={userName}
+                authState={authState}
               />
             }
           />

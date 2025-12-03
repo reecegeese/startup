@@ -1,6 +1,7 @@
 import React from "react";
 import { Event, Notifier } from "./notifier";
 import "./lists.css";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 export function Lists(props) {
@@ -8,6 +9,7 @@ export function Lists(props) {
   const [textBox, setText] = React.useState([]);
   const [events, setEvent] = React.useState([]);
   const items = props.list;
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     Notifier.addHandler(handleEvent);
@@ -15,6 +17,13 @@ export function Lists(props) {
     return () => {
       Notifier.removeHandler(handleEvent);
     };
+  });
+
+  React.useEffect(() => {
+    if (props.authState.name != "authenticated") {
+      console.log(props.authState);
+      navigate("/");
+    }
   });
 
   function handleEvent(event) {
@@ -91,6 +100,10 @@ export function Lists(props) {
             Delete
           </Button>
         </form>
+      </div>
+      <div className="container-fluid text-center w-50 quote-box">
+        <p className="quote">"{quote}"</p>
+        <p className="author">-{quoteAuthor}</p>
       </div>
     </main>
   );

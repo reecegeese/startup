@@ -8,7 +8,9 @@
 }
 
 header {
-  flex: 0 30px;
+  flex: 0 70px;
+  border-bottom: solid #40a3ff medium;
+  background-color: #9ecffa;
 }
 
 main {
@@ -22,8 +24,6 @@ main {
 
 .navbar {
   flex: 0 30px;
-  border-bottom: solid #40a3ff medium;
-  background-color: #9ecffa;
 }
 
 footer {

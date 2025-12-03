@@ -20,9 +20,9 @@ export function About(props) {
   return (
     <main className="container-fluid text-center">
       <div>
-        <main className="container-fluid text-center pt-5 pb-5">
+        <main className="container-fluid text-center pt-4 pb-4">
           <div id="picture" class="picture-box">
-            <img src="Staring Cat.PNG" alt="random cat" />
+            <img src="Staring Cat.PNG" alt="A black cat staring at you" />
           </div>
 
           <p className="w-50">
