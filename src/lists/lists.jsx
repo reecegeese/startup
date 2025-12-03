@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 
 export function Lists(props) {
   const userName = props.userName;
-  const [textBox, setText] = React.useState([]);
+  const [textBox, setText] = React.useState("");
   const [events, setEvent] = React.useState([]);
   const items = props.list;
   const navigate = useNavigate();
@@ -34,12 +34,13 @@ export function Lists(props) {
     e.preventDefault();
     if (!textBox) return;
     const newEvent = {
+      id: crypto.randomUUID(),
       from: userName,
       type: Event.End,
       item: textBox,
     };
     props.onInit((prev) => [newEvent, ...prev]);
-    setText(textBox);
+    setText("");
   }
 
   function handleDeleteClick(e) {
@@ -64,6 +65,39 @@ export function Lists(props) {
         </div>
       );
     });
+  }
+
+  function createGlobalMessage() {
+    return items.map((event) => (
+      <globalMessage
+        key={event.id}
+        event={event}
+        onExpire={(id) =>
+          props.onInit((prev) => prev.filter((ev) => ev.id !== id))
+        }
+      />
+    ));
+  }
+
+  function globalMessage({ event, onExpire }) {
+    React.useEffect(() => {
+      const timer = setTimeout(() => {
+        onExpire(event.id);
+      }, 30000);
+
+      return () => clearTimeout(timer);
+    }, [event.id, onExpire]);
+
+    let message = "unknown";
+    if (event.type === Event.End) {
+      message = `${event.from} added ${event.item}`;
+    }
+
+    return (
+      <div className="event">
+        <span className="global-message"></span> {message}
+      </div>
+    );
   }
 
   return (
@@ -102,7 +136,7 @@ export function Lists(props) {
         </form>
         <div className="container-fluid text-center global-box">
           <p className="globalText">Global Updates</p>
-          <p className="globalText">Anna added an item</p>
+          <div id="global-message">{createGlobalMessage()}</div>
         </div>
       </div>
     </main>
