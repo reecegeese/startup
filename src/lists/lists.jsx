@@ -68,7 +68,7 @@ export function Lists(props) {
 
   return (
     <main className="container-fluid text-center">
-      <div className="contributors">
+      <div>
         <h1>Welcome {userName}</h1>
         <h2>Your current list</h2>
         <div id="contributor-messages">{createMessageArray()}</div>
@@ -100,10 +100,10 @@ export function Lists(props) {
             Delete
           </Button>
         </form>
-      </div>
-      <div className="container-fluid text-center w-50 quote-box">
-        <p className="quote">"{quote}"</p>
-        <p className="author">-{quoteAuthor}</p>
+        <div className="container-fluid text-center global-box">
+          <p className="globalText">Global Updates</p>
+          <p className="globalText">Anna added an item</p>
+        </div>
       </div>
     </main>
   );

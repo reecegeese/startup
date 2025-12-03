@@ -33,13 +33,11 @@ export function About(props) {
             the list as well as who added something, who deleted something and
             who crossed something off
           </p>
-
           <p className="w-50">
             I could easily copyright this idea and make a billion dollars out of
             law suits and retire in my mansion on the moon. Fortunatly for you
             i'm a nice person so this site is COMPLETLY FREE. Lucky you.
           </p>
-
           <p className="w-50">
             That cat staring at you is hard coded but will eventually be
             randomized and show you a new picture every time you open this page
@@ -48,6 +46,7 @@ export function About(props) {
             And this line will do the same with a random quote or fact or
             somthing. I don't know yet. I'll see what's funny and pick that
           </p>
+
           <div className="container-fluid text-center w-50 quote-box">
             <p className="quote">"{quote}"</p>
             <p className="author">-{quoteAuthor}</p>

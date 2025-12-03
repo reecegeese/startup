@@ -12,3 +12,12 @@ button {
   background-color: #0088ff;
   margin: 10px;
 }
+
+.global-box {
+  background-color: #82c5fe;
+  border: solid #5eb1ff medium;
+}
+
+.globalText {
+  padding: 2%;
+}
