@@ -1,5 +1,7 @@
 const Event = {
   System: "system",
+  End: "End",
+  Start: "Start",
 };
 
 class EventMessage {
@@ -22,12 +24,14 @@ class EventNotifier {
     );
     this.socket.onopen = (event) => {
       this.receiveEvent(
-        new EventMessage("Simon", GameEvent.System, { msg: "connected" })
+        new EventMessage("List Maker", Event.System, { msg: "connected" })
       );
     };
     this.socket.onclose = (event) => {
       this.receiveEvent(
-        new EventMessage("Simon", GameEvent.System, { msg: "disconnected" })
+        new EventMessage("List Maker", Event.System, {
+          msg: "disconnected",
+        })
       );
     };
     this.socket.onmessage = async (msg) => {

@@ -1,6 +1,6 @@
 import React from "react";
-import { Event, Notifier } from "./notifier";
 import { useNavigate } from "react-router-dom";
+import { Event, Notifier } from "./notifier";
 import Button from "react-bootstrap/Button";
 import "./lists.css";
 
@@ -8,7 +8,6 @@ export function Lists(props) {
   const userName = props.userName;
   const events = props.events;
   const setEvent = props.setEvents;
-  const items = props.list;
   const navigate = useNavigate();
   const [textBox, setText] = React.useState("");
   const [globalMessages, setGlobalMessages] = React.useState([]);
@@ -25,20 +24,30 @@ export function Lists(props) {
   }, []);
 
   React.useEffect(() => {
-    Notifier.addHandler(handleEvent);
-    return () => Notifier.removeHandler(handleEvent);
+    const handleGlobalEvent = (event) => {
+      const newMsg = {
+        id: crypto.randomUUID(),
+        from: event.from,
+        type: event.type,
+        value: event.value,
+        expiresAt: Date.now() + 10000,
+      };
+      setGlobalMessages((prev) => {
+        const updated = [newMsg, ...prev];
+        localStorage.setItem("globalMessages", JSON.stringify(updated));
+        return updated;
+      });
+      setTimeout(() => removeGlobalMessage(newMsg.id), 10000);
+    };
+    Notifier.addHandler(handleGlobalEvent);
+    return () => Notifier.removeHandler(handleGlobalEvent);
   }, []);
 
   React.useEffect(() => {
-    if (props.authState.name != "authenticated") {
-      console.log(props.authState);
+    if (props.authState.name !== "authenticated") {
       navigate("/");
     }
   }, [props.authState, navigate]);
-
-  function handleEvent(event) {
-    setEvent((prev) => [...prev, event]);
-  }
 
   function handleAddClick(e) {
     e.preventDefault();
@@ -47,61 +56,26 @@ export function Lists(props) {
       id: crypto.randomUUID(),
       from: userName,
       type: Event.End,
-      item: textBox,
+      value: textBox,
     };
     setEvent((prev) => [...prev, newEvent]);
-    addGlobalMessage(newEvent);
-    setText("");
-    setTimeout(() => {
-      setGlobalMessages((prev) => prev.filter((ev) => ev.id !== newEvent.id));
-    }, 10000);
-  }
-
-  function handleDeleteClick(e) {
-    e.preventDefault();
-    setEvent((prev) => {
-      const updated = [...prev];
-      updated.pop();
-      return updated;
-    });
-  }
-
-  function createMessageArray() {
-    return events.map((event, i) => (
-      <div key={i} className="event">
-        {event.from} added {event.item}
-      </div>
-    ));
-  }
-
-  function createGlobalMessage() {
-    return globalMessages.map((event) => (
-      <GlobalMessage key={event.id} event={event} />
-    ));
-  }
-
-  function GlobalMessage({ event }) {
-    let message = "unknown";
-    if (event.type === Event.End) {
-      message = `${event.from} added ${event.item}`;
-    }
-
-    return (
-      <div className="event">
-        <span className="global-message"></span> {message}
-      </div>
-    );
-  }
-
-  function addGlobalMessage(event) {
-    const expiresAt = Date.now() + 10000;
-    const newMsg = { ...event, expiresAt };
+    const newMsg = {
+      ...newEvent,
+      expiresAt: Date.now() + 10000,
+    };
     setGlobalMessages((prev) => {
       const updated = [newMsg, ...prev];
       localStorage.setItem("globalMessages", JSON.stringify(updated));
       return updated;
     });
-    setTimeout(() => removeGlobalMessage(newMsg.id), 30000);
+    Notifier.broadcastEvent(userName, Event.End, textBox);
+    setText("");
+    setTimeout(() => removeGlobalMessage(newMsg.id), 10000);
+  }
+
+  function handleDeleteClick(e) {
+    e.preventDefault();
+    setEvent((prev) => prev.slice(0, -1));
   }
 
   function removeGlobalMessage(id) {
@@ -110,6 +84,22 @@ export function Lists(props) {
       localStorage.setItem("globalMessages", JSON.stringify(updated));
       return updated;
     });
+  }
+
+  function createMessageArray() {
+    return events.map((event, i) => (
+      <div key={i} className="event">
+        {event.from} added {event.value}
+      </div>
+    ));
+  }
+
+  function createGlobalMessage() {
+    return globalMessages.map((event) => (
+      <div key={event.id} className="event">
+        <span className="global-message">{event.from}</span> added {event.value}
+      </div>
+    ));
   }
 
   return (
@@ -129,16 +119,10 @@ export function Lists(props) {
               placeholder="Add an item"
             />
           </div>
-          <Button
-            type="submit"
-            className="btn btn-primary"
-            id="add_button"
-            disabled={!textBox}
-          >
+          <Button type="submit" id="add_button" disabled={!textBox}>
             Add
           </Button>
           <Button
-            className="btn btn-secondary"
             id="delete_button"
             onClick={handleDeleteClick}
             disabled={events.length === 0}
