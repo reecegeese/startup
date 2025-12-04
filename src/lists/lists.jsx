@@ -27,7 +27,7 @@ export function Lists(props) {
   React.useEffect(() => {
     Notifier.addHandler(handleEvent);
     return () => Notifier.removeHandler(handleEvent);
-  }, [events]);
+  }, []);
 
   React.useEffect(() => {
     if (props.authState.name != "authenticated") {
@@ -50,7 +50,7 @@ export function Lists(props) {
       item: textBox,
     };
     setEvent((prev) => [...prev, newEvent]);
-    setGlobalMessages((prev) => [newEvent, ...prev]);
+    addGlobalMessage(newEvent);
     setText("");
     setTimeout(() => {
       setGlobalMessages((prev) => prev.filter((ev) => ev.id !== newEvent.id));
@@ -59,8 +59,11 @@ export function Lists(props) {
 
   function handleDeleteClick(e) {
     e.preventDefault();
-    setEvent((prev) => prev.slice(1));
-    props.onInit((prev) => prev.slice(1));
+    setEvent((prev) => {
+      const updated = [...prev];
+      updated.pop();
+      return updated;
+    });
   }
 
   function createMessageArray() {
