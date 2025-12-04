@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
 function App() {
-  const [sharedEvents, setSharedEvents] = React.useState([]);
+  const [events, setEvents] = React.useState([]);
   const [userName, setUserName] = React.useState(
     localStorage.getItem("userName") || ""
   );
@@ -73,8 +73,8 @@ function App() {
             path="/lists"
             element={
               <Lists
-                onInit={(events) => setSharedEvents(events)}
-                list={sharedEvents}
+                events={events}
+                setEvents={setEvents}
                 userName={userName}
                 authState={authState}
               />
@@ -84,8 +84,8 @@ function App() {
             path="/groups"
             element={
               <Groups
-                onInit={(events) => setSharedEvents(events)}
-                list={sharedEvents}
+                events={events}
+                setEvents={setEvents}
                 userName={userName}
                 authState={authState}
               />

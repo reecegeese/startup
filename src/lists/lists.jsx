@@ -1,34 +1,43 @@
 import React from "react";
 import { Event, Notifier } from "./notifier";
-import "./lists.css";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import "./lists.css";
 
 export function Lists(props) {
   const userName = props.userName;
-  const [textBox, setText] = React.useState("");
-  const [events, setEvent] = React.useState([]);
+  const events = props.events;
+  const setEvent = props.setEvents;
   const items = props.list;
   const navigate = useNavigate();
+  const [textBox, setText] = React.useState("");
   const [globalMessages, setGlobalMessages] = React.useState([]);
 
   React.useEffect(() => {
-    Notifier.addHandler(handleEvent);
+    const stored = JSON.parse(localStorage.getItem("globalMessages")) || [];
+    const now = Date.now();
+    const validMessages = stored.filter((msg) => msg.expiresAt > now);
+    setGlobalMessages(validMessages);
+    validMessages.forEach((msg) => {
+      const delay = msg.expiresAt - now;
+      setTimeout(() => removeGlobalMessage(msg.id), delay);
+    });
+  }, []);
 
-    return () => {
-      Notifier.removeHandler(handleEvent);
-    };
-  });
+  React.useEffect(() => {
+    Notifier.addHandler(handleEvent);
+    return () => Notifier.removeHandler(handleEvent);
+  }, [events]);
 
   React.useEffect(() => {
     if (props.authState.name != "authenticated") {
       console.log(props.authState);
       navigate("/");
     }
-  });
+  }, [props.authState, navigate]);
 
   function handleEvent(event) {
-    setEvent([...events, event]);
+    setEvent((prev) => [...prev, event]);
   }
 
   function handleAddClick(e) {
@@ -40,41 +49,26 @@ export function Lists(props) {
       type: Event.End,
       item: textBox,
     };
-    props.onInit((prev) => [newEvent, ...prev]);
+    setEvent((prev) => [...prev, newEvent]);
     setGlobalMessages((prev) => [newEvent, ...prev]);
     setText("");
     setTimeout(() => {
       setGlobalMessages((prev) => prev.filter((ev) => ev.id !== newEvent.id));
-    }, 30000);
+    }, 10000);
   }
 
   function handleDeleteClick(e) {
     e.preventDefault();
-    props.onInit((prev) => {
-      const updated = [...prev];
-      updated.shift();
-      return updated;
-    });
+    setEvent((prev) => prev.slice(1));
+    props.onInit((prev) => prev.slice(1));
   }
 
   function createMessageArray() {
-    return items.map((event, i) => {
-      let message = "unknown";
-      if (event.type === Event.End) {
-        message = `${event.from} added ${event.item}`;
-      }
-      messageArray.push(
-        <div key={i} className="event">
-          <span className={"global-message"}>{event.from.split("@")[0]}</span>
-          {message}
-        </div>
-      );
-      return (
-        <div key={i} className="event">
-          <span className="contributor-event"></span> {message}
-        </div>
-      );
-    });
+    return events.map((event, i) => (
+      <div key={i} className="event">
+        {event.from} added {event.item}
+      </div>
+    ));
   }
 
   function createGlobalMessage() {
@@ -94,6 +88,25 @@ export function Lists(props) {
         <span className="global-message"></span> {message}
       </div>
     );
+  }
+
+  function addGlobalMessage(event) {
+    const expiresAt = Date.now() + 10000;
+    const newMsg = { ...event, expiresAt };
+    setGlobalMessages((prev) => {
+      const updated = [newMsg, ...prev];
+      localStorage.setItem("globalMessages", JSON.stringify(updated));
+      return updated;
+    });
+    setTimeout(() => removeGlobalMessage(newMsg.id), 30000);
+  }
+
+  function removeGlobalMessage(id) {
+    setGlobalMessages((prev) => {
+      const updated = prev.filter((msg) => msg.id !== id);
+      localStorage.setItem("globalMessages", JSON.stringify(updated));
+      return updated;
+    });
   }
 
   return (
@@ -125,7 +138,7 @@ export function Lists(props) {
             className="btn btn-secondary"
             id="delete_button"
             onClick={handleDeleteClick}
-            disabled={items.length === 0}
+            disabled={events.length === 0}
           >
             Delete
           </Button>
