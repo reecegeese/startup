@@ -4,11 +4,12 @@ const express = require("express");
 const uuid = require("uuid");
 const app = express();
 const DB = require("./database.js");
+const { peerProxy } = require("./peerProxy.js");
 
 const authCookieName = "token";
 
 // The service port may be set on the command line
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
@@ -134,3 +135,5 @@ function setAuthCookie(res, authToken) {
 const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);

@@ -1,14 +1,10 @@
-# Simon
+# List Maker
 
 [My Notes](notes.md)
 
-In 1978 Milton-Bradley, now Hasbro, released an electronic game named Simon. It was cutting edge at the time since there were so few electronic games, and all the cool kids had one.
-
-We are going to build a peer to peer multiplayer web application modeled after Simon. We will build it together by adding new functionality every time we learn a new technology. The example version of code and production deployment for each iteration are available to you. Your job will be to review the example and then deploy it to your production environment. The goal is to make you think about every line of code. Ask, "why is it done this way?" and "Is there a better way?". You can then take what you have learned, or even portions of the Simon code, and apply it to your Startup application.
-
 ## 🚀 Specification Deliverable
 
-Simon is a simple game where you repeat a sequence of color flashes. The longer sequence you repeat the higher your score is.
+This will be a website where people can create and share lists with other people
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
@@ -20,13 +16,11 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-A mind is a beautiful thing, but it needs stimulation. Lights, color, sound, and action. Simon give you hours of fun as you complete to remember the longest sequence of colors. See if you can top the charts with you efforts. Receive automatic notification of how your friends are doing.
+My website will be a list maker where users can create lists to add and delete from and be able to share their lists with others as a community
 
 ### Design
 
 ![Design](designDiagram.png)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ```mermaid
 sequenceDiagram
@@ -35,19 +29,18 @@ sequenceDiagram
     Login->>About: See about information
     About-->>Login: Login
     About->>About: Read inspirational quote
-    Login->>Play: Start game
-    Play->>Play: repeat sequences
-    Play->>Play: View other player's game notifications
-    Play-->>Login: Logout
-    Login-->>Scores: view high scores
+    Login->>Lists: Create list
+    Lists->>Lists: Add and delete items in list
+    Lists->>Lists: See what other people are adding to their lists
+    Lists-->>Login: Logout
+    Login-->>Groups: See your lists
 ```
 
 ### Key features
 
 - Login, logout, and register
-- See high scores
-- Receive notifications for other player's achievements
-- Play by repeating color sequences
+- See list items
+- Receive notifications for other users lists
 - See a description of the app
 - Read inspirational quotes
 
@@ -66,7 +59,7 @@ I am going to use the required technologies in the following ways.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Server deployed and accessible with custom domain name** - [My server link](https://simon.cs260.click).
+- [x] **Server deployed and accessible with custom domain name** - [My server link](https://simon.reecelove260.click).
 
 ## 🚀 HTML deliverable
 
@@ -79,8 +72,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **3rd party API placeholder** - About page has a place to display an inspirational quote.
 - [x] **Images** - Image is displayed on the about page.
 - [x] **Login placeholder** - Placeholder for auth on the login page.
-- [x] **DB data placeholder** - High scores displayed on scores page.
-- [x] **WebSocket placeholder** - The play page has a text area that will show what other user notifications.
+- [x] **DB data placeholder** - Items displayed on lists page.
+- [x] **WebSocket placeholder** - The lists page has a text area that will show what other user notifications.
 
 ## 🚀 CSS deliverable
 
@@ -125,3 +118,13 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 - [x] **Stores data in MongoDB** - Scores stored in MongoDB from `service/database.js`.
 - [x] **Stores credentials in MongoDB** - Auth stored in MongoDB from `service/database.js`.
+
+## 🚀 WebSocket deliverable
+
+For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
+
+- [x] **Backend listens for WebSocket connection** - Backend webSocket management executed in `service/index.js`.
+- [x] **Frontend makes WebSocket connection** - Backend webSocket management executed in `src/notifier.js`.
+- [x] **Data sent over WebSocket connection** - JSON representation of game notifications.
+- [x] **WebSocket data displayed** - Global notifications displayed on lists page.
+- [x] **Application is fully functional** - Yahoo 🎉. Ready for Demo day. I'm thinking chocolate. 🍫

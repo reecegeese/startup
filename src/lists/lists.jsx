@@ -95,7 +95,8 @@ export function Lists(props) {
   }
 
   function createGlobalMessage() {
-    return globalMessages.map((event) => (
+    const filtered = globalMessages.filter((message) => message.type == "End");
+    return filtered.map((event) => (
       <div key={event.id} className="event">
         <span className="global-message">{event.from}</span> added {event.value}
       </div>
