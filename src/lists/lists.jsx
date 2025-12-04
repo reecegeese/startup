@@ -30,14 +30,14 @@ export function Lists(props) {
         from: event.from,
         type: event.type,
         value: event.value,
-        expiresAt: Date.now() + 10000,
+        expiresAt: Date.now() + 30000,
       };
       setGlobalMessages((prev) => {
         const updated = [newMsg, ...prev];
         localStorage.setItem("globalMessages", JSON.stringify(updated));
         return updated;
       });
-      setTimeout(() => removeGlobalMessage(newMsg.id), 10000);
+      setTimeout(() => removeGlobalMessage(newMsg.id), 30000);
     };
     Notifier.addHandler(handleGlobalEvent);
     return () => Notifier.removeHandler(handleGlobalEvent);
@@ -61,7 +61,7 @@ export function Lists(props) {
     setEvent((prev) => [...prev, newEvent]);
     const newMsg = {
       ...newEvent,
-      expiresAt: Date.now() + 10000,
+      expiresAt: Date.now() + 30000,
     };
     setGlobalMessages((prev) => {
       const updated = [newMsg, ...prev];
@@ -70,7 +70,7 @@ export function Lists(props) {
     });
     Notifier.broadcastEvent(userName, Event.End, textBox);
     setText("");
-    setTimeout(() => removeGlobalMessage(newMsg.id), 10000);
+    setTimeout(() => removeGlobalMessage(newMsg.id), 30000);
   }
 
   function handleDeleteClick(e) {
