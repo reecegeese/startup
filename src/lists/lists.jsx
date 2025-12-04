@@ -63,7 +63,12 @@ export function Lists(props) {
       if (event.type === Event.End) {
         message = `${event.from} added ${event.item}`;
       }
-
+      messageArray.push(
+        <div key={i} className="event">
+          <span className={"global-message"}>{event.from.split("@")[0]}</span>
+          {message}
+        </div>
+      );
       return (
         <div key={i} className="event">
           <span className="contributor-event"></span> {message}
